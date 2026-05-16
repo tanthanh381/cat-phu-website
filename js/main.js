@@ -515,6 +515,12 @@ function wireContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      const contentType = response.headers.get("Content-Type") || "";
+      if (!contentType.includes("application/json")) {
+        message.textContent = "Website đang chạy bản tĩnh. Vui lòng gọi hotline, nhắn Zalo hoặc Fanpage để Cát Phú tư vấn nhanh nhất.";
+        return;
+      }
+
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Không gửi được thông tin.");
       form.reset();
