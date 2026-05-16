@@ -36,6 +36,37 @@ Thư mục `docs/` là bản website tĩnh dùng để deploy lên GitHub Pages.
 
 Lưu ý: GitHub Pages chỉ chạy website tĩnh. Trang admin cần server Python local để lưu nội dung vào JSON.
 
+## Deploy admin online bằng Render
+
+Repo đã có sẵn `render.yaml` để tạo web service chạy Python trên Render.
+
+Link tạo service nhanh:
+
+```text
+https://render.com/deploy?repo=https://github.com/tanthanh381/cat-phu-website
+```
+
+Khi Render hỏi biến môi trường, nhập:
+
+```text
+CAT_PHU_ADMIN_PASSWORD=mat-khau-admin-cua-ban
+```
+
+Sau khi deploy xong:
+
+- Website động: `https://<ten-service>.onrender.com/`
+- Admin: `https://<ten-service>.onrender.com/admin`
+
+Render bắt buộc web service bind vào `0.0.0.0` và dùng biến `PORT`; `server.py` đã tự xử lý việc này khi phát hiện đang chạy trên Render.
+
+Lưu ý lưu dữ liệu: gói free của Render dùng filesystem tạm. Nếu muốn nội dung chỉnh trong admin không mất khi redeploy/restart, hãy nâng service lên gói trả phí và gắn Persistent Disk, rồi đặt:
+
+```text
+CAT_PHU_DATA_DIR=/var/data
+```
+
+Nếu chưa gắn disk, admin vẫn chạy online được nhưng dữ liệu chỉnh trực tiếp trên Render có thể mất sau mỗi lần redeploy.
+
 ## Đăng nhập admin
 
 Mật khẩu mặc định:
