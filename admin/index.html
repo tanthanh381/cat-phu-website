@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src https://api.github.com; base-uri 'self'; form-action 'none'; object-src 'none'">
+    <meta name="referrer" content="same-origin">
     <title>Admin GitHub | Cát Phú</title>
     <link rel="icon" href="../assets/logo-cat-phu.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/admin.css">
@@ -15,12 +17,13 @@
         <p>Trang này chạy trực tiếp trên GitHub Pages và lưu nội dung vào nhánh xuất bản của website.</p>
         <label>
           <span>GitHub token</span>
-          <input type="password" id="github-token" autocomplete="off" spellcheck="false" required>
+          <input type="password" id="github-token" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="text" required>
         </label>
         <button type="submit">Mở trang admin</button>
         <div class="login__help">
-          <span>Token chỉ được lưu trong phiên trình duyệt hiện tại.</span>
-          <span>Cần token có quyền đọc và ghi Contents cho repo tanthanh381/cat-phu-website.</span>
+          <span>Token chỉ được lưu trong phiên trình duyệt hiện tại và sẽ bị xóa khi bấm Đăng xuất hoặc đóng phiên trình duyệt.</span>
+          <span>Chỉ dùng Fine-grained token, cấp quyền tối thiểu: Contents Read/Write cho repo tanthanh381/cat-phu-website.</span>
+          <span>Không nhập token trên máy công cộng hoặc trình duyệt có extension không tin cậy.</span>
           <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer">Tạo GitHub token</a>
         </div>
         <small id="login-message" role="status"></small>
@@ -53,6 +56,6 @@
       </div>
     </section>
 
-    <script src="../js/github-admin.js?v=20260516"></script>
+    <script src="../js/github-admin.js?v=20260516-token-hardening"></script>
   </body>
 </html>
