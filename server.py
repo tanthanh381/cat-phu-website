@@ -23,8 +23,12 @@ CONTENT_FILE = DATA_DIR / "site.json"
 LEADS_FILE = DATA_DIR / "leads.json"
 SEED_CONTENT_FILE = DEFAULT_DATA_DIR / "site.json"
 IS_RENDER = os.environ.get("RENDER") == "true"
-ADMIN_PASSWORD = os.environ.get("CAT_PHU_ADMIN_PASSWORD") or ("" if IS_RENDER else "catphu2026")
+DEFAULT_ADMIN_PASSWORD = "catphu2026"
+ADMIN_PASSWORD_FROM_ENV = os.environ.get("CAT_PHU_ADMIN_PASSWORD")
+ADMIN_PASSWORD = ADMIN_PASSWORD_FROM_ENV or ("" if IS_RENDER else DEFAULT_ADMIN_PASSWORD)
+USING_DEFAULT_ADMIN_PASSWORD = ADMIN_PASSWORD == DEFAULT_ADMIN_PASSWORD and not ADMIN_PASSWORD_FROM_ENV
 COOKIE_NAME = "catphu_admin"
+COOKIE_SECURE = IS_RENDER or os.environ.get("CAT_PHU_SECURE_COOKIE") == "true"
 SESSION_TTL_SECONDS = 8 * 60 * 60
 LOCKOUT_SECONDS = 5 * 60
 MAX_LOGIN_ATTEMPTS = 5
@@ -101,6 +105,10 @@ def validate_content(payload):
     validate_json_shape(payload)
 
 
+def is_loopback_host(host):
+    return host in {"127.0.0.1", "localhost", "::1"}
+
+
 class CatPhuHandler(BaseHTTPRequestHandler):
     server_version = "CatPhuWebsite/1.0"
     sys_version = ""
@@ -140,6 +148,9 @@ class CatPhuHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed = urlparse(self.path)
         if parsed.path == "/api/login":
+            if not self.is_same_origin_request():
+                self.send_json({"error": "Yêu cầu không cùng nguồn."}, 403)
+                return
             if self.is_login_locked():
                 self.send_json({"error": "Đăng nhập sai quá nhiều lần. Vui lòng thử lại sau 5 phút."}, 429)
                 return
@@ -162,6 +173,9 @@ class CatPhuHandler(BaseHTTPRequestHandler):
             )
             return
         if parsed.path == "/api/logout":
+            if not self.is_same_origin_request():
+                self.send_json({"error": "Yêu cầu không cùng nguồn."}, 403)
+                return
             token = self.get_auth_token()
             if token:
                 TOKENS.pop(token, None)
@@ -205,6 +219,9 @@ class CatPhuHandler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         if parsed.path != "/api/content":
             self.send_json({"error": "Không tìm thấy API."}, 404)
+            return
+        if not self.is_same_origin_request():
+            self.send_json({"error": "Yêu cầu không cùng nguồn."}, 403)
             return
         if not self.is_authenticated():
             self.send_json({"error": "Bạn cần đăng nhập admin."}, 401)
@@ -258,6 +275,23 @@ class CatPhuHandler(BaseHTTPRequestHandler):
             return False
         return True
 
+    def request_origin(self):
+        scheme = "https" if (COOKIE_SECURE or self.headers.get("X-Forwarded-Proto") == "https") else "http"
+        host = self.headers.get("Host", "")
+        return f"{scheme}://{host}" if host else ""
+
+    def is_same_origin_request(self):
+        expected = self.request_origin()
+        for header_name in ("Origin", "Referer"):
+            header_value = self.headers.get(header_name)
+            if not header_value:
+                continue
+            parsed = urlparse(header_value)
+            actual = f"{parsed.scheme}://{parsed.netloc}"
+            if expected and actual != expected:
+                return False
+        return True
+
     def is_login_locked(self):
         record = FAILED_LOGINS.get(self.client_address[0])
         return bool(record and record.get("locked_until", 0) > time.time())
@@ -274,11 +308,11 @@ class CatPhuHandler(BaseHTTPRequestHandler):
         FAILED_LOGINS.pop(self.client_address[0], None)
 
     def session_cookie(self, token):
-        secure = "; Secure" if IS_RENDER else ""
+        secure = "; Secure" if COOKIE_SECURE else ""
         return f"{COOKIE_NAME}={token}; Path=/; HttpOnly; SameSite=Strict{secure}; Max-Age={SESSION_TTL_SECONDS}"
 
     def expired_session_cookie(self):
-        secure = "; Secure" if IS_RENDER else ""
+        secure = "; Secure" if COOKIE_SECURE else ""
         return f"{COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Strict{secure}; Max-Age=0"
 
     def add_security_headers(self, content_type=""):
@@ -286,6 +320,8 @@ class CatPhuHandler(BaseHTTPRequestHandler):
         self.send_header("X-Frame-Options", "DENY")
         self.send_header("Referrer-Policy", "same-origin")
         self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+        if COOKIE_SECURE:
+            self.send_header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
         if content_type.startswith("text/html"):
             self.send_header(
                 "Content-Security-Policy",
@@ -353,16 +389,20 @@ class CatPhuHandler(BaseHTTPRequestHandler):
 
 
 def main():
-    if not ADMIN_PASSWORD:
-        raise SystemExit("CAT_PHU_ADMIN_PASSWORD là bắt buộc khi chạy admin online trên Render.")
-    ensure_data_files()
     port = int(os.environ.get("PORT", "5500"))
     host = os.environ.get("CAT_PHU_BIND_HOST") or ("0.0.0.0" if IS_RENDER else "127.0.0.1")
+    if not ADMIN_PASSWORD:
+        raise SystemExit("CAT_PHU_ADMIN_PASSWORD là bắt buộc khi chạy admin online.")
+    if USING_DEFAULT_ADMIN_PASSWORD and not is_loopback_host(host):
+        raise SystemExit("Không được dùng mật khẩu admin mặc định khi bind public. Hãy đặt CAT_PHU_ADMIN_PASSWORD.")
+    ensure_data_files()
     server = ThreadingHTTPServer((host, port), CatPhuHandler)
     display_base = os.environ.get("RENDER_EXTERNAL_URL") or f"http://127.0.0.1:{port}"
     print(f"Cát Phú website đang chạy tại {display_base}/")
     print(f"Trang admin: {display_base}/admin")
     print(f"Thư mục dữ liệu: {DATA_DIR}")
+    if USING_DEFAULT_ADMIN_PASSWORD:
+        print("Cảnh báo: đang dùng mật khẩu admin mặc định chỉ dành cho local development.")
     print("Dừng server bằng Ctrl+C")
     server.serve_forever()
 
