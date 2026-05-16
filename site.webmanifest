@@ -1,0 +1,18 @@
+{
+  "name": "Cát Phú | Kiến trúc và xây dựng",
+  "short_name": "Cát Phú",
+  "description": "Xây nhà trọn gói, thiết kế kiến trúc, thi công phần thô và hoàn thiện nhà ở tại TP.HCM.",
+  "start_url": "https://tanthanh381.github.io/cat-phu-website/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#15315f",
+  "lang": "vi-VN",
+  "icons": [
+    {
+      "src": "assets/logo-cat-phu.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
