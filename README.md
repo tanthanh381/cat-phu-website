@@ -29,12 +29,14 @@ Mở:
 
 ## GitHub Pages
 
-Thư mục `docs/` là bản website tĩnh dùng để deploy lên GitHub Pages. Khi bật GitHub Pages, chọn:
+Nhánh `gh-pages` là bản website tĩnh đang được deploy lên GitHub Pages.
 
-- Branch: `main`
-- Folder: `/docs`
+- Website: https://tanthanh381.github.io/cat-phu-website/
+- Admin tĩnh: https://tanthanh381.github.io/cat-phu-website/admin/
 
-Lưu ý: GitHub Pages chỉ chạy website tĩnh. Trang admin cần server Python local để lưu nội dung vào JSON.
+Admin tĩnh trên GitHub Pages chỉnh nội dung bằng GitHub API. Khi đăng nhập, dán GitHub token có quyền đọc/ghi `Contents` cho repo `tanthanh381/cat-phu-website`; token chỉ được lưu trong phiên trình duyệt hiện tại.
+
+Lưu ý: GitHub Pages chỉ chạy website tĩnh. Admin tĩnh chỉnh được nội dung website, bài viết, footer, dịch vụ và dự án, nhưng không chạy backend để nhận form tư vấn. Nếu muốn có form khách gửi và đăng nhập bằng mật khẩu admin riêng, dùng bản Render bên dưới.
 
 ## Deploy admin online bằng Render
 
