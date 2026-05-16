@@ -1,0 +1,316 @@
+html {
+  scroll-padding-top: 120px;
+}
+
+.nav__links {
+  gap: clamp(12px, 1.5vw, 22px);
+  font-size: clamp(13px, 1.05vw, 15px);
+}
+
+.nav__links a {
+  white-space: nowrap;
+}
+
+.site-header {
+  isolation: isolate;
+}
+
+.button,
+.nav__toggle,
+.field input,
+.field select,
+.field textarea,
+.faq-item summary,
+.contact-info__list a {
+  -webkit-tap-highlight-color: rgba(246, 172, 0, 0.24);
+}
+
+.button:focus-visible,
+.nav__toggle:focus-visible,
+.nav__links a:focus-visible,
+.footer a:focus-visible,
+.contact-info__list a:focus-visible,
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible,
+.faq-item summary:focus-visible {
+  outline: 3px solid rgba(246, 172, 0, 0.75);
+  outline-offset: 3px;
+}
+
+.post-card,
+.project-card,
+.service-card,
+.price-card,
+.case-card,
+.testimonial-card,
+.seo-card,
+.enhancement-card,
+.faq-item {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.post-card:hover,
+.project-card:hover,
+.service-card:hover,
+.price-card:hover,
+.case-card:hover,
+.testimonial-card:hover,
+.seo-card:hover,
+.enhancement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(23, 32, 51, 0.12);
+}
+
+.form-grid {
+  align-items: start;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-size: 16px;
+}
+
+.form-message {
+  line-height: 1.45;
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand strong {
+    font-size: 20px;
+  }
+
+  .brand small {
+    font-size: 11px;
+  }
+
+  .nav__inner {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .topbar__inner {
+    display: none;
+  }
+
+  .topbar {
+    min-height: 0;
+  }
+
+  .nav__inner {
+    min-height: 68px;
+  }
+
+  .nav__links {
+    top: 68px;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    gap: 0;
+    padding: 10px 20px 18px;
+  }
+
+  .nav__links a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+  }
+
+  .nav__links a:last-child {
+    border-bottom: 0;
+  }
+
+  .nav__links a::after {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero .container {
+    padding: 72px 0 70px;
+  }
+
+  .hero__content {
+    max-width: 620px;
+  }
+
+  .grid,
+  .case-grid,
+  .faq-list {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .nav__inner {
+    min-height: 64px;
+  }
+
+  .nav__links {
+    top: 64px;
+    max-height: calc(100vh - 64px);
+  }
+
+  .brand strong {
+    font-size: 21px;
+  }
+
+  .hero .container {
+    padding: 58px 0 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(31px, 9vw, 40px);
+    line-height: 1.1;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__actions {
+    margin-top: 24px;
+  }
+
+  .button {
+    min-height: 50px;
+    width: 100%;
+  }
+
+  .section {
+    padding: 54px 0;
+  }
+
+  .section__heading {
+    margin-bottom: 24px;
+  }
+
+  .section__heading h2,
+  .about-layout__content h2,
+  .pricing-note h2,
+  .faq-layout h2 {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .problem-card,
+  .reason-card,
+  .commit-card,
+  .price-card,
+  .service-card__body,
+  .project-card__body,
+  .post-card__body,
+  .enhancement-card,
+  .testimonial-card,
+  .seo-card,
+  .case-card__body {
+    padding: 20px;
+  }
+
+  .service-card img,
+  .project-card img,
+  .post-card img {
+    height: 210px;
+  }
+
+  .about-layout__media,
+  .about-layout__media img {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .about-layout__badge {
+    position: static;
+    max-width: none;
+    margin-top: 12px;
+  }
+
+  .contact-layout,
+  .faq-layout,
+  .pricing-note,
+  .case-card {
+    gap: 18px;
+  }
+
+  .contact-form,
+  .contact-info,
+  .pricing-note {
+    padding: 20px;
+  }
+
+  .field--full,
+  .form-grid .field {
+    grid-column: 1 / -1;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 50px;
+  }
+
+  .field textarea {
+    min-height: 130px;
+  }
+
+  .capability-stats {
+    gap: 12px;
+  }
+
+  .capability-stat {
+    padding: 18px;
+  }
+
+  .capability-stat strong {
+    font-size: 26px;
+  }
+
+  .case-card img {
+    min-height: 220px;
+    height: 220px;
+  }
+
+  .footer__services nav a:first-child {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand strong {
+    font-size: 19px;
+  }
+}
