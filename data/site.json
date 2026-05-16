@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "siteTitle": "Cát Phú | Kiến trúc và xây dựng",
+    "description": "Cát Phú cung cấp dịch vụ tư vấn thiết kế, xin phép xây dựng, thi công phần thô, hoàn thiện và bàn giao nhà trọn gói.",
+    "fanpage": "https://www.facebook.com/home.qa.98"
+  },
+  "company": {
+    "name": "Cát Phú",
+    "tagline": "Thiết kế & thi công trọn gói",
+    "phone": "035 644 1838",
+    "email": "lienhe@catphu.vn",
+    "address": "51/6/1 Đường số 12, Khu phố Tam Đa, Phường Trường Thạnh, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam",
+    "logo": "assets/logo-cat-phu.svg"
+  },
+  "hero": {
+    "eyebrow": "Xây nhà trọn gói Cát Phú",
+    "title": "Xây tổ ấm vững bền, minh bạch từ thiết kế đến bàn giao",
+    "description": "Cát Phú đồng hành cùng gia chủ từ khảo sát, thiết kế, dự toán, thủ tục pháp lý đến thi công hoàn thiện. Mỗi hạng mục được kiểm soát bằng quy trình rõ ràng, vật tư minh bạch và tiến độ cam kết.",
+    "primaryCta": "Nhận tư vấn miễn phí",
+    "secondaryCta": "Xem quy trình",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82",
+    "stats": [
+      {
+        "value": "100+",
+        "label": "công trình đồng hành"
+      },
+      {
+        "value": "A-Z",
+        "label": "thiết kế đến hoàn công"
+      },
+      {
+        "value": "20 năm",
+        "label": "định hướng bảo hành kết cấu"
+      }
+    ]
+  },
+  "problems": {
+    "title": "Bạn đang lo gì khi bắt đầu xây nhà?",
+    "subtitle": "Một căn nhà đẹp không chỉ là phối cảnh ấn tượng. Điều quan trọng hơn là ngân sách, chất lượng, tiến độ và cảm giác yên tâm trong từng giai đoạn.",
+    "items": [
+      {
+        "title": "Không kiểm soát được chi phí",
+        "text": "Thiếu dự toán chi tiết khiến công trình dễ phát sinh ngoài kế hoạch."
+      },
+      {
+        "title": "Chất lượng thi công khó giám sát",
+        "text": "Gia chủ không có chuyên môn để kiểm tra kỹ thuật, vật tư và nghiệm thu."
+      },
+      {
+        "title": "Chậm tiến độ bàn giao",
+        "text": "Không có kế hoạch thi công rõ ràng khiến các đội thợ bị chồng chéo."
+      },
+      {
+        "title": "Thủ tục pháp lý phức tạp",
+        "text": "Hồ sơ xin phép, bản vẽ và hoàn công cần được chuẩn bị đúng ngay từ đầu."
+      },
+      {
+        "title": "Vật tư không minh bạch",
+        "text": "Chủng loại, thương hiệu và khối lượng vật tư cần được thể hiện rõ trong hợp đồng."
+      },
+      {
+        "title": "Thiết kế không hợp công năng",
+        "text": "Ngôi nhà cần phù hợp thói quen sống, phong thủy, ánh sáng và khả năng tài chính."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Giải pháp trọn gói",
+    "title": "Cát Phú thay bạn quản lý toàn bộ hành trình xây nhà",
+    "text": "Dịch vụ xây nhà trọn gói giúp gia chủ có một đầu mối chịu trách nhiệm xuyên suốt. Cát Phú lập phương án thiết kế, bóc tách khối lượng, tư vấn vật tư, tổ chức thi công, giám sát chất lượng và bàn giao theo hồ sơ đã thống nhất.",
+    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82",
+    "highlights": [
+      "Dự toán minh bạch trước khi ký hợp đồng",
+      "Nhật ký công trình và nghiệm thu theo giai đoạn",
+      "Đội ngũ kỹ thuật theo sát hiện trường",
+      "Tư vấn vật tư phù hợp ngân sách"
+    ]
+  },
+  "services": [
+    {
+      "title": "Thiết kế kiến trúc",
+      "text": "Tư vấn mặt bằng công năng, phối cảnh, hồ sơ kỹ thuật và giải pháp thẩm mỹ phù hợp phong cách sống.",
+      "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=900&q=80",
+      "features": [
+        "Nhà phố",
+        "Biệt thự",
+        "Cải tạo"
+      ]
+    },
+    {
+      "title": "Thi công phần thô",
+      "text": "Tổ chức thi công móng, khung, sàn, tường, chống thấm, điện nước âm và nghiệm thu kỹ thuật từng hạng mục.",
+      "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
+      "features": [
+        "Kết cấu",
+        "Điện nước",
+        "Giám sát"
+      ]
+    },
+    {
+      "title": "Hoàn thiện nội ngoại thất",
+      "text": "Hoàn thiện sơn, ốp lát, trần, cửa, thiết bị vệ sinh, chiếu sáng và các hạng mục bàn giao sử dụng.",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+      "features": [
+        "Vật tư rõ ràng",
+        "Thẩm mỹ",
+        "Bàn giao"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Nhà phố 1 trệt 2 lầu",
+      "location": "TP. Thủ Đức",
+      "area": "5m x 18m",
+      "floors": "3 tầng",
+      "type": "Xây nhà trọn gói",
+      "status": "Đã bàn giao",
+      "image": "https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=1100&q=82",
+      "description": "Không gian mở, nhiều ánh sáng tự nhiên, tối ưu công năng cho gia đình trẻ."
+    },
+    {
+      "title": "Biệt thự hiện đại",
+      "location": "Bình Dương",
+      "area": "12m x 20m",
+      "floors": "2 tầng",
+      "type": "Thiết kế & thi công",
+      "status": "Đang hoàn thiện",
+      "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1100&q=82",
+      "description": "Hình khối tinh gọn, sân vườn thoáng và vật liệu hoàn thiện bền vững."
+    },
+    {
+      "title": "Cải tạo nhà ở kết hợp kinh doanh",
+      "location": "Quận 7",
+      "area": "6m x 16m",
+      "floors": "4 tầng",
+      "type": "Cải tạo trọn gói",
+      "status": "Đã bàn giao",
+      "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1100&q=82",
+      "description": "Tái cấu trúc mặt tiền, luồng giao thông và khu sinh hoạt riêng tư."
+    }
+  ],
+  "reasons": {
+    "title": "Lý do chọn Cát Phú",
+    "items": [
+      {
+        "title": "Dự toán rõ ngay từ đầu",
+        "text": "Bóc tách khối lượng, vật tư, đơn giá và tiến độ thanh toán minh bạch."
+      },
+      {
+        "title": "Giám sát chặt chẽ",
+        "text": "Kỹ thuật hiện trường kiểm tra chất lượng, an toàn và nhật ký thi công."
+      },
+      {
+        "title": "Vật tư đúng cam kết",
+        "text": "Chủng loại vật tư được ghi rõ, nghiệm thu trước khi đưa vào công trình."
+      },
+      {
+        "title": "Bàn giao đúng tiến độ",
+        "text": "Kế hoạch thi công theo giai đoạn giúp gia chủ theo dõi dễ dàng."
+      }
+    ]
+  },
+  "pricing": [
+    {
+      "name": "Gói phần thô",
+      "price": "Từ 3.600.000 đ/m2",
+      "summary": "Phù hợp gia chủ muốn chủ động chọn vật tư hoàn thiện.",
+      "features": [
+        "Móng, cột, dầm, sàn",
+        "Xây tô, chống thấm cơ bản",
+        "Điện nước âm tường",
+        "Nhân công hoàn thiện"
+      ]
+    },
+    {
+      "name": "Gói hoàn thiện tiêu chuẩn",
+      "price": "Từ 5.800.000 đ/m2",
+      "summary": "Giải pháp cân bằng giữa chi phí, chất lượng và tiến độ.",
+      "features": [
+        "Bao gồm phần thô",
+        "Sơn nước, gạch ốp lát",
+        "Cửa, trần, thiết bị cơ bản",
+        "Bàn giao sử dụng"
+      ]
+    },
+    {
+      "name": "Gói cao cấp",
+      "price": "Từ 7.200.000 đ/m2",
+      "summary": "Dành cho công trình yêu cầu vật tư và hoàn thiện cao hơn.",
+      "features": [
+        "Vật tư thương hiệu tốt",
+        "Tư vấn nội thất đồng bộ",
+        "Kiểm soát chi tiết hoàn thiện",
+        "Bảo hành sau bàn giao"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Tư vấn & khảo sát",
+      "text": "Tiếp nhận nhu cầu, khảo sát hiện trạng, xác định ngân sách và mục tiêu công trình."
+    },
+    {
+      "step": "02",
+      "title": "Thiết kế & dự toán",
+      "text": "Lên mặt bằng, phối cảnh, hồ sơ kỹ thuật và bảng dự toán vật tư chi tiết."
+    },
+    {
+      "step": "03",
+      "title": "Ký hợp đồng",
+      "text": "Thống nhất phạm vi công việc, tiến độ, vật tư, bảo hành và điều khoản thanh toán."
+    },
+    {
+      "step": "04",
+      "title": "Thi công & nghiệm thu",
+      "text": "Triển khai từng hạng mục, cập nhật tiến độ và nghiệm thu theo giai đoạn."
+    },
+    {
+      "step": "05",
+      "title": "Bàn giao & bảo hành",
+      "text": "Vệ sinh, kiểm tra hoàn thiện, bàn giao hồ sơ và tiếp tục đồng hành sau sử dụng."
+    }
+  ],
+  "commitments": [
+    {
+      "title": "Không tự ý đổi vật tư",
+      "text": "Mọi thay đổi vật tư đều cần được thống nhất bằng văn bản với gia chủ."
+    },
+    {
+      "title": "Không bỏ trống giám sát",
+      "text": "Các hạng mục quan trọng có kỹ thuật kiểm tra trước khi chuyển bước thi công."
+    },
+    {
+      "title": "Không làm mập mờ chi phí",
+      "text": "Chi phí phát sinh chỉ ghi nhận khi có thay đổi phạm vi hoặc yêu cầu mới."
+    },
+    {
+      "title": "Không bàn giao qua loa",
+      "text": "Công trình được rà soát hoàn thiện, vệ sinh và hướng dẫn sử dụng trước bàn giao."
+    }
+  ],
+  "posts": [
+    {
+      "title": "Cát Phú đồng hành từ bản vẽ đến ngày bàn giao",
+      "date": "2026-05-15",
+      "tag": "Fanpage",
+      "excerpt": "Một công trình trọn gói cần bắt đầu bằng thiết kế đúng, dự toán rõ và đội ngũ thi công có trách nhiệm. Cát Phú tập trung vào sự minh bạch để gia chủ yên tâm trong từng giai đoạn.",
+      "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=82",
+      "url": "https://www.facebook.com/home.qa.98"
+    },
+    {
+      "title": "Những điểm cần kiểm tra trước khi đổ bê tông",
+      "date": "2026-05-10",
+      "tag": "Kinh nghiệm xây nhà",
+      "excerpt": "Cốp pha, cốt thép, con kê, đường điện nước âm và điều kiện thời tiết là các yếu tố cần được kiểm tra trước khi nghiệm thu đổ bê tông.",
+      "image": "https://images.unsplash.com/photo-1590644365607-1f2ee6caaa47?auto=format&fit=crop&w=1100&q=82",
+      "url": "https://www.facebook.com/home.qa.98"
+    },
+    {
+      "title": "Chọn gói xây dựng theo ngân sách gia đình",
+      "date": "2026-05-04",
+      "tag": "Tư vấn",
+      "excerpt": "Không phải lúc nào gói cao nhất cũng là lựa chọn phù hợp. Quan trọng là xác định ưu tiên, phong cách sống và các hạng mục nên đầu tư lâu dài.",
+      "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1100&q=82",
+      "url": "https://www.facebook.com/home.qa.98"
+    }
+  ],
+  "contact": {
+    "title": "Gửi yêu cầu tư vấn",
+    "subtitle": "Để lại thông tin, Cát Phú sẽ liên hệ khảo sát và tư vấn phương án phù hợp.",
+    "serviceOptions": [
+      "Xây nhà trọn gói",
+      "Thiết kế kiến trúc",
+      "Thi công phần thô",
+      "Hoàn thiện nội thất",
+      "Cải tạo sửa chữa"
+    ],
+    "budgetOptions": [
+      "Dưới 1 tỷ",
+      "1 - 2 tỷ",
+      "2 - 4 tỷ",
+      "Trên 4 tỷ"
+    ]
+  },
+  "footer": {
+    "logo": "assets/logo-cat-phu.svg",
+    "aboutTitle": "Về chúng tôi",
+    "companyName": "CÔNG TY TNHH KIẾN TRÚC VÀ XÂY DỰNG CÁT PHÚ",
+    "aboutLines": [
+      "Địa chỉ: 51/6/1 Đường số 12, Khu phố Tam Đa, Phường Trường Thạnh, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam",
+      "Hotline: 035 644 1838",
+      "Email: lienhe@catphu.vn",
+      "MST: 0317308107"
+    ],
+    "servicesTitle": "Dịch vụ",
+    "services": [
+      {
+        "label": "Thiết kế & thi công trọn gói nhà ở",
+        "url": "#services"
+      },
+      {
+        "label": "Thiết kế kiến trúc",
+        "url": "#services"
+      },
+      {
+        "label": "Thi công phần thô",
+        "url": "#pricing"
+      },
+      {
+        "label": "Hoàn thiện nội ngoại thất",
+        "url": "#contact"
+      }
+    ],
+    "fanpageTitle": "Fanpage",
+    "fanpageName": "Cát Phú - Kiến trúc và xây dựng",
+    "fanpageStats": "Theo dõi fanpage để cập nhật công trình và tư vấn xây nhà",
+    "fanpageImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=82",
+    "fanpageUrl": "https://www.facebook.com/home.qa.98",
+    "socialLinks": [
+      {
+        "label": "f",
+        "title": "Facebook",
+        "url": "https://www.facebook.com/home.qa.98"
+      },
+      {
+        "label": "Zalo",
+        "title": "Zalo",
+        "url": "https://zalo.me/0356441838"
+      },
+      {
+        "label": "Gọi",
+        "title": "Hotline",
+        "url": "tel:0356441838"
+      }
+    ],
+    "copyright": "© 2026 Công ty TNHH Kiến trúc và Xây dựng Cát Phú. Thiết kế & thi công trọn gói."
+  },
+  "updated_at": "2026-05-15T14:31:25.457623+00:00"
+}
