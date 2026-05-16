@@ -9,6 +9,18 @@ document.addEventListener(
 
     const message = document.getElementById("form-message");
     const payload = Object.fromEntries(new FormData(form).entries());
+    const phone = String(payload.phone || "").trim();
+    const normalizedPhone = phone.replace(/[\s.-]/g, "");
+    const isValidVietnamPhone = /^(0|\+84)\d{9,10}$/.test(normalizedPhone);
+
+    if (!isValidVietnamPhone) {
+      if (message) {
+        message.textContent = "Vui lòng nhập số điện thoại hợp lệ, ví dụ: 0356441838 hoặc +84356441838.";
+      }
+      form.querySelector('[name="phone"]')?.focus();
+      return;
+    }
+
     const email = document.getElementById("top-email")?.textContent?.trim() || "lienhe@catphu.vn";
     const companyName = document.getElementById("brand-name")?.textContent?.trim() || "Cát Phú";
     const subject = encodeURIComponent(`Yêu cầu tư vấn từ website ${companyName}`);
@@ -17,7 +29,7 @@ document.addEventListener(
         "Khách hàng gửi yêu cầu tư vấn từ website:",
         "",
         `Họ tên: ${payload.name || ""}`,
-        `Số điện thoại: ${payload.phone || ""}`,
+        `Số điện thoại: ${phone}`,
         `Khu vực: ${payload.area || ""}`,
         `Loại công trình: ${payload.service || ""}`,
         `Mức đầu tư: ${payload.budget || ""}`,
