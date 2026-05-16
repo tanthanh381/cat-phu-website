@@ -49,7 +49,7 @@ def start_server(extra_env=None):
     env["PORT"] = PORT
     env["PYTHONPYCACHEPREFIX"] = "/private/tmp/catphu-pycache"
     if extra_env:
-      env.update(extra_env)
+        env.update(extra_env)
     return subprocess.Popen(
         [sys.executable, "server.py"],
         cwd=ROOT,
@@ -84,6 +84,23 @@ def terminate(process):
         process.kill()
 
 
+def assert_admin_disabled_without_render_password():
+    process = start_server({"RENDER": "true"})
+    try:
+        wait_until_ready(process)
+        status, _headers, _body = request("/api/content")
+        assert_equal(status, 200, "public site should stay online without admin password")
+        status, _headers, body = request("/api/session")
+        assert_equal(status, 200, "session endpoint should respond when admin is disabled")
+        session = json.loads(body.decode("utf-8"))
+        assert_true(not session["authenticated"], "admin should not be authenticated without password")
+        assert_true(not session["admin_enabled"], "admin should report disabled without password")
+        status, _headers, _body = request("/api/login", "POST", {"password": "anything"})
+        assert_equal(status, 503, "login should be unavailable when admin password is missing")
+    finally:
+        terminate(process)
+
+
 def assert_public_bind_rejects_default_password():
     process = start_server({"CAT_PHU_BIND_HOST": "0.0.0.0"})
     try:
@@ -104,6 +121,7 @@ def main():
     with open(LEADS_FILE, "rb") as file:
         original_leads = file.read()
 
+    assert_admin_disabled_without_render_password()
     assert_public_bind_rejects_default_password()
 
     process = start_server()
@@ -141,7 +159,9 @@ def main():
 
         status, _headers, body = request("/api/session", headers=auth_headers)
         assert_equal(status, 200, "session endpoint should respond")
-        assert_true(json.loads(body.decode("utf-8"))["authenticated"], "session should be authenticated")
+        session = json.loads(body.decode("utf-8"))
+        assert_true(session["authenticated"], "session should be authenticated")
+        assert_true(session["admin_enabled"], "admin should be enabled in local dev")
 
         status, _headers, content_body = request("/api/content")
         content = json.loads(content_body.decode("utf-8"))
