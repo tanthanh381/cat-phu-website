@@ -1,0 +1,162 @@
+{
+  "capability": {
+    "eyebrow": "Hồ sơ năng lực",
+    "title": "Năng lực thi công nhà ở trọn gói tại TP.HCM và khu vực lân cận",
+    "description": "Cát Phú tập trung vào nhóm công trình nhà phố, biệt thự, cải tạo nhà ở và hoàn thiện nội ngoại thất. Mỗi dự án được kiểm soát theo quy trình khảo sát, thiết kế, bóc tách khối lượng, thi công, nghiệm thu và bàn giao rõ ràng.",
+    "items": [
+      {
+        "title": "Đội ngũ kỹ thuật theo sát hiện trường",
+        "text": "Kỹ thuật phụ trách kiểm tra các hạng mục quan trọng như móng, cốt thép, cốp pha, chống thấm, điện nước âm và hoàn thiện trước khi nghiệm thu."
+      },
+      {
+        "title": "Dự toán minh bạch theo phạm vi công việc",
+        "text": "Bảng dự toán thể hiện hạng mục, khối lượng, vật tư, đơn giá và điều kiện áp dụng để gia chủ dễ kiểm soát ngân sách."
+      },
+      {
+        "title": "Quản lý vật tư đúng cam kết",
+        "text": "Chủng loại vật tư được thống nhất trước khi thi công; mọi thay đổi cần có xác nhận để hạn chế phát sinh không rõ ràng."
+      },
+      {
+        "title": "Bàn giao có kiểm tra hoàn thiện",
+        "text": "Công trình được rà soát vệ sinh, vận hành, lỗi hoàn thiện và hồ sơ liên quan trước khi bàn giao cho gia chủ sử dụng."
+      }
+    ],
+    "stats": [
+      {
+        "value": "A-Z",
+        "label": "Thiết kế, dự toán, thi công, hoàn thiện"
+      },
+      {
+        "value": "TP.HCM+",
+        "label": "Phục vụ TP.HCM và tỉnh lân cận"
+      },
+      {
+        "value": "Rõ ràng",
+        "label": "Vật tư, tiến độ và phạm vi công việc"
+      }
+    ]
+  },
+  "caseStudies": {
+    "eyebrow": "Case study",
+    "title": "Một số tình huống công trình Cát Phú có thể đồng hành",
+    "description": "Các case study dưới đây giúp khách hàng hình dung cách Cát Phú tiếp cận từng loại nhu cầu: xây mới, hoàn thiện và cải tạo.",
+    "items": [
+      {
+        "title": "Nhà phố gia đình trẻ tại TP. Thủ Đức",
+        "context": "Gia chủ cần không gian ở thoáng, nhiều ánh sáng và kiểm soát ngân sách ngay từ đầu.",
+        "solution": "Cát Phú tư vấn mặt bằng công năng, lập dự toán theo từng hạng mục và chia tiến độ nghiệm thu theo giai đoạn.",
+        "result": "Công trình ưu tiên không gian sinh hoạt chung, phòng ngủ đủ riêng tư và khu bếp thông thoáng.",
+        "image": "https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=1100&q=82"
+      },
+      {
+        "title": "Biệt thự hiện đại cần hoàn thiện đồng bộ",
+        "context": "Công trình yêu cầu vật liệu bền, hình khối hiện đại và đồng bộ giữa ngoại thất, nội thất, ánh sáng.",
+        "solution": "Đội kỹ thuật kiểm soát vật tư hoàn thiện, phối hợp hạng mục trần, sơn, ốp lát, cửa, thiết bị vệ sinh và chiếu sáng.",
+        "result": "Không gian hoàn thiện đồng nhất phong cách, giảm chồng chéo giữa các đội thợ trong giai đoạn cuối.",
+        "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1100&q=82"
+      },
+      {
+        "title": "Cải tạo nhà ở kết hợp kinh doanh",
+        "context": "Gia chủ cần cải tạo mặt tiền, tối ưu luồng khách và vẫn giữ khu sinh hoạt riêng tư cho gia đình.",
+        "solution": "Cát Phú đề xuất lại luồng giao thông, khu vực kinh doanh, hệ thống điện nước và phương án hoàn thiện tiết kiệm thời gian.",
+        "result": "Không gian sử dụng linh hoạt hơn, mặt tiền rõ nhận diện hơn và hạn chế ảnh hưởng đến sinh hoạt trong quá trình cải tạo.",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1100&q=82"
+      }
+    ]
+  },
+  "pricingNotes": {
+    "eyebrow": "Lưu ý báo giá",
+    "title": "Đơn giá chỉ chính xác sau khi khảo sát và thống nhất phạm vi",
+    "items": [
+      "Đơn giá phụ thuộc diện tích xây dựng, số tầng, nền đất, kết cấu móng, vị trí thi công và điều kiện vận chuyển vật tư.",
+      "Báo giá cần ghi rõ phần bao gồm và không bao gồm: thiết kế, xin phép, phần thô, nhân công hoàn thiện, vật tư hoàn thiện, nội thất rời.",
+      "Phát sinh chỉ nên ghi nhận khi gia chủ thay đổi phạm vi, vật tư hoặc thiết kế so với hồ sơ đã thống nhất.",
+      "Cát Phú khuyến nghị khảo sát hiện trạng trước khi chốt ngân sách để tránh hiểu nhầm giữa đơn giá tham khảo và giá thi công thực tế."
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Khách hàng nói gì",
+    "title": "Niềm tin đến từ sự minh bạch trong từng giai đoạn",
+    "items": [
+      {
+        "name": "Anh Minh",
+        "location": "TP. Thủ Đức",
+        "project": "Nhà phố 1 trệt 2 lầu",
+        "quote": "Điều tôi cần nhất là chi phí rõ ràng và có người theo sát hiện trường. Cát Phú cập nhật tiến độ đều, các hạng mục quan trọng đều được báo trước khi nghiệm thu."
+      },
+      {
+        "name": "Chị Hạnh",
+        "location": "Bình Dương",
+        "project": "Hoàn thiện nhà ở",
+        "quote": "Tôi đánh giá cao cách tư vấn vật tư theo ngân sách. Đội thi công giải thích rõ phần nào nên đầu tư lâu dài, phần nào có thể tối ưu chi phí."
+      },
+      {
+        "name": "Gia đình anh Phúc",
+        "location": "Quận 7",
+        "project": "Cải tạo nhà ở kết hợp kinh doanh",
+        "quote": "Công trình cải tạo cần vừa làm vừa giữ sinh hoạt. Cát Phú giúp sắp xếp hạng mục theo thứ tự hợp lý nên gia đình chủ động hơn trong quá trình sửa nhà."
+      }
+    ]
+  },
+  "seoArticles": {
+    "eyebrow": "Kiến thức xây nhà",
+    "title": "Nội dung nên đọc trước khi bắt đầu xây nhà",
+    "items": [
+      {
+        "title": "Xây nhà trọn gói gồm những hạng mục nào?",
+        "excerpt": "Tìm hiểu các phần thường có trong gói xây nhà: thiết kế, xin phép, phần thô, hoàn thiện, nghiệm thu và bàn giao.",
+        "tag": "Xây nhà trọn gói"
+      },
+      {
+        "title": "Cách dự trù ngân sách xây nhà theo m2",
+        "excerpt": "Diện tích, số tầng, vật tư, nền đất và phong cách hoàn thiện là các yếu tố ảnh hưởng lớn đến tổng chi phí.",
+        "tag": "Chi phí xây nhà"
+      },
+      {
+        "title": "Checklist nghiệm thu phần thô cho gia chủ",
+        "excerpt": "Các điểm cần lưu ý gồm cốt thép, cốp pha, bê tông, chống thấm, tường xây, tô trát và điện nước âm.",
+        "tag": "Nghiệm thu"
+      },
+      {
+        "title": "Có nên tự thuê thợ hay chọn xây nhà trọn gói?",
+        "excerpt": "So sánh ưu nhược điểm giữa tự quản lý đội thợ và chọn một đơn vị chịu trách nhiệm xuyên suốt công trình.",
+        "tag": "Tư vấn"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Câu hỏi thường gặp trước khi xây nhà",
+    "items": [
+      {
+        "question": "Cát Phú có khảo sát trước khi báo giá không?",
+        "answer": "Có. Khảo sát giúp xác định hiện trạng, diện tích, vị trí, điều kiện thi công và nhu cầu thực tế trước khi lập dự toán chi tiết."
+      },
+      {
+        "question": "Giá xây nhà trọn gói có cố định không?",
+        "answer": "Đơn giá trên website là tham khảo. Giá chính xác phụ thuộc hồ sơ thiết kế, vật tư, nền đất, số tầng và phạm vi công việc đã thống nhất."
+      },
+      {
+        "question": "Nếu đang thi công muốn đổi vật tư thì xử lý thế nào?",
+        "answer": "Mọi thay đổi vật tư hoặc phạm vi cần được xác nhận trước để cập nhật chi phí, tiến độ và tránh phát sinh không rõ ràng."
+      },
+      {
+        "question": "Cát Phú có nhận cải tạo sửa chữa không?",
+        "answer": "Có. Cát Phú nhận tư vấn cải tạo nhà ở, nhà kết hợp kinh doanh và các hạng mục hoàn thiện nội ngoại thất theo hiện trạng thực tế."
+      }
+    ]
+  },
+  "contactEnhancement": {
+    "startOptions": [
+      "Trong 1 tháng tới",
+      "1 - 3 tháng tới",
+      "3 - 6 tháng tới",
+      "Chưa xác định"
+    ],
+    "contactMethodOptions": [
+      "Gọi điện",
+      "Zalo",
+      "Email"
+    ]
+  }
+}
