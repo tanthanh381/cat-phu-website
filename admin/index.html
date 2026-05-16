@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin GitHub | Cát Phú</title>
+    <link rel="icon" href="../assets/logo-cat-phu.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/admin.css">
+  </head>
+  <body>
+    <main class="login" id="login-view">
+      <form class="login__panel" id="login-form">
+        <img src="../assets/logo-cat-phu.svg" alt="Logo Cát Phú">
+        <h1>Quản trị nội dung</h1>
+        <p>Trang này chạy trực tiếp trên GitHub Pages và lưu nội dung vào nhánh xuất bản của website.</p>
+        <label>
+          <span>GitHub token</span>
+          <input type="password" id="github-token" autocomplete="off" spellcheck="false" required>
+        </label>
+        <button type="submit">Mở trang admin</button>
+        <div class="login__help">
+          <span>Token chỉ được lưu trong phiên trình duyệt hiện tại.</span>
+          <span>Cần token có quyền đọc và ghi Contents cho repo tanthanh381/cat-phu-website.</span>
+          <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer">Tạo GitHub token</a>
+        </div>
+        <small id="login-message" role="status"></small>
+      </form>
+    </main>
+
+    <section class="admin" id="admin-view" hidden>
+      <aside class="sidebar">
+        <a class="sidebar__brand" href="../">
+          <img src="../assets/logo-cat-phu.svg" alt="Logo Cát Phú">
+          <span>Cát Phú CMS</span>
+        </a>
+        <nav id="tabs"></nav>
+        <a class="sidebar__link" href="../" target="_blank" rel="noreferrer">Xem website</a>
+      </aside>
+      <div class="workspace">
+        <header class="workspace__header">
+          <div>
+            <p>Admin trên GitHub Pages</p>
+            <h1 id="panel-title">Nội dung website</h1>
+          </div>
+          <div class="workspace__actions">
+            <button type="button" class="button button--ghost" id="refresh-btn">Tải lại</button>
+            <button type="button" class="button button--ghost" id="logout-btn">Đăng xuất</button>
+            <button type="button" class="button" id="save-btn">Lưu thay đổi</button>
+          </div>
+        </header>
+        <div class="notice" id="notice" role="status"></div>
+        <div class="editor" id="editor"></div>
+      </div>
+    </section>
+
+    <script src="../js/github-admin.js?v=20260516"></script>
+  </body>
+</html>
