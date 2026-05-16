@@ -26,6 +26,7 @@ IS_RENDER = os.environ.get("RENDER") == "true"
 DEFAULT_ADMIN_PASSWORD = "catphu2026"
 ADMIN_PASSWORD_FROM_ENV = os.environ.get("CAT_PHU_ADMIN_PASSWORD")
 ADMIN_PASSWORD = ADMIN_PASSWORD_FROM_ENV or ("" if IS_RENDER else DEFAULT_ADMIN_PASSWORD)
+ADMIN_ENABLED = bool(ADMIN_PASSWORD)
 USING_DEFAULT_ADMIN_PASSWORD = ADMIN_PASSWORD == DEFAULT_ADMIN_PASSWORD and not ADMIN_PASSWORD_FROM_ENV
 COOKIE_NAME = "catphu_admin"
 COOKIE_SECURE = IS_RENDER or os.environ.get("CAT_PHU_SECURE_COOKIE") == "true"
@@ -119,7 +120,7 @@ class CatPhuHandler(BaseHTTPRequestHandler):
             self.send_json(read_json(CONTENT_FILE, {}))
             return
         if parsed.path == "/api/session":
-            self.send_json({"authenticated": self.is_authenticated()})
+            self.send_json({"authenticated": self.is_authenticated(), "admin_enabled": ADMIN_ENABLED})
             return
         if parsed.path == "/api/leads":
             if not self.is_authenticated():
@@ -135,7 +136,7 @@ class CatPhuHandler(BaseHTTPRequestHandler):
             self.send_json(read_json(CONTENT_FILE, {}), head=True)
             return
         if parsed.path == "/api/session":
-            self.send_json({"authenticated": self.is_authenticated()}, head=True)
+            self.send_json({"authenticated": self.is_authenticated(), "admin_enabled": ADMIN_ENABLED}, head=True)
             return
         if parsed.path == "/api/leads":
             if not self.is_authenticated():
@@ -148,6 +149,9 @@ class CatPhuHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed = urlparse(self.path)
         if parsed.path == "/api/login":
+            if not ADMIN_ENABLED:
+                self.send_json({"error": "Admin đang tắt. Vui lòng cấu hình CAT_PHU_ADMIN_PASSWORD trên máy chủ."}, 503)
+                return
             if not self.is_same_origin_request():
                 self.send_json({"error": "Yêu cầu không cùng nguồn."}, 403)
                 return
@@ -220,6 +224,9 @@ class CatPhuHandler(BaseHTTPRequestHandler):
         if parsed.path != "/api/content":
             self.send_json({"error": "Không tìm thấy API."}, 404)
             return
+        if not ADMIN_ENABLED:
+            self.send_json({"error": "Admin đang tắt. Vui lòng cấu hình CAT_PHU_ADMIN_PASSWORD trên máy chủ."}, 503)
+            return
         if not self.is_same_origin_request():
             self.send_json({"error": "Yêu cầu không cùng nguồn."}, 403)
             return
@@ -264,6 +271,8 @@ class CatPhuHandler(BaseHTTPRequestHandler):
         return ""
 
     def is_authenticated(self):
+        if not ADMIN_ENABLED:
+            return False
         token = self.get_auth_token()
         if not token:
             return False
@@ -391,8 +400,6 @@ class CatPhuHandler(BaseHTTPRequestHandler):
 def main():
     port = int(os.environ.get("PORT", "5500"))
     host = os.environ.get("CAT_PHU_BIND_HOST") or ("0.0.0.0" if IS_RENDER else "127.0.0.1")
-    if not ADMIN_PASSWORD:
-        raise SystemExit("CAT_PHU_ADMIN_PASSWORD là bắt buộc khi chạy admin online.")
     if USING_DEFAULT_ADMIN_PASSWORD and not is_loopback_host(host):
         raise SystemExit("Không được dùng mật khẩu admin mặc định khi bind public. Hãy đặt CAT_PHU_ADMIN_PASSWORD.")
     ensure_data_files()
@@ -401,7 +408,9 @@ def main():
     print(f"Cát Phú website đang chạy tại {display_base}/")
     print(f"Trang admin: {display_base}/admin")
     print(f"Thư mục dữ liệu: {DATA_DIR}")
-    if USING_DEFAULT_ADMIN_PASSWORD:
+    if not ADMIN_ENABLED:
+        print("Cảnh báo: admin đang tắt vì chưa cấu hình CAT_PHU_ADMIN_PASSWORD.")
+    elif USING_DEFAULT_ADMIN_PASSWORD:
         print("Cảnh báo: đang dùng mật khẩu admin mặc định chỉ dành cho local development.")
     print("Dừng server bằng Ctrl+C")
     server.serve_forever()
