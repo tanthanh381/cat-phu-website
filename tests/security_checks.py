@@ -44,10 +44,12 @@ def assert_true(condition, label):
         raise AssertionError(label)
 
 
-def start_server():
+def start_server(extra_env=None):
     env = os.environ.copy()
     env["PORT"] = PORT
     env["PYTHONPYCACHEPREFIX"] = "/private/tmp/catphu-pycache"
+    if extra_env:
+      env.update(extra_env)
     return subprocess.Popen(
         [sys.executable, "server.py"],
         cwd=ROOT,
@@ -74,11 +76,35 @@ def wait_until_ready(process):
     raise RuntimeError("Server did not become ready in time.")
 
 
+def terminate(process):
+    process.terminate()
+    try:
+        process.wait(timeout=3)
+    except subprocess.TimeoutExpired:
+        process.kill()
+
+
+def assert_public_bind_rejects_default_password():
+    process = start_server({"CAT_PHU_BIND_HOST": "0.0.0.0"})
+    try:
+        deadline = time.time() + 4
+        while time.time() < deadline and process.poll() is None:
+            time.sleep(0.1)
+        assert_true(process.poll() is not None, "public bind with default password should exit")
+        output = process.stdout.read() if process.stdout else ""
+        assert_true("mật khẩu admin mặc định" in output, "public bind rejection should explain default password risk")
+    finally:
+        if process.poll() is None:
+            terminate(process)
+
+
 def main():
     with open(SITE_FILE, "rb") as file:
         original_site = file.read()
     with open(LEADS_FILE, "rb") as file:
         original_leads = file.read()
+
+    assert_public_bind_rejects_default_password()
 
     process = start_server()
     try:
@@ -98,6 +124,14 @@ def main():
         status, _headers, _body = request("/api/leads")
         assert_equal(status, 401, "lead list should require auth")
 
+        status, _headers, _body = request(
+            "/api/login",
+            "POST",
+            {"password": "catphu2026"},
+            {"Origin": "https://evil.example"},
+        )
+        assert_equal(status, 403, "cross-origin login should be rejected")
+
         status, login_headers, _body = request("/api/login", "POST", {"password": "catphu2026"})
         assert_equal(status, 200, "valid login should succeed with cookie")
         session_cookie = login_headers.get("Set-Cookie", "")
@@ -113,6 +147,13 @@ def main():
         content = json.loads(content_body.decode("utf-8"))
         status, _headers, _body = request("/api/content", "PUT", content)
         assert_equal(status, 401, "content save should require auth")
+        status, _headers, _body = request(
+            "/api/content",
+            "PUT",
+            content,
+            {**auth_headers, "Origin": "https://evil.example"},
+        )
+        assert_equal(status, 403, "cross-origin content save should be rejected")
         status, _headers, _body = request("/api/content", "PUT", content, auth_headers)
         assert_equal(status, 200, "content save should work when authenticated")
 
@@ -135,11 +176,7 @@ def main():
 
         print("OK: security checks passed")
     finally:
-        process.terminate()
-        try:
-            process.wait(timeout=3)
-        except subprocess.TimeoutExpired:
-            process.kill()
+        terminate(process)
         with open(SITE_FILE, "wb") as file:
             file.write(original_site)
         with open(LEADS_FILE, "wb") as file:
