@@ -1,0 +1,15 @@
+services:
+  - type: web
+    runtime: python
+    name: cat-phu-admin
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: "python3 -m compileall server.py"
+    startCommand: "python3 server.py"
+    autoDeploy: true
+    envVars:
+      - key: CAT_PHU_ADMIN_PASSWORD
+        sync: false
+      - key: CAT_PHU_DATA_DIR
+        value: data
