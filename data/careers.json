@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "eyebrow": "Tuyển dụng",
+    "title": "Gia nhập đội ngũ Cát Phú",
+    "description": "Cát Phú tìm kiếm những cộng sự có tinh thần trách nhiệm, làm việc minh bạch và mong muốn đồng hành cùng khách hàng trong hành trình xây dựng tổ ấm bền vững.",
+    "primaryCta": "Ứng tuyển ngay",
+    "secondaryCta": "Xem vị trí đang tuyển"
+  },
+  "intro": {
+    "title": "Vì sao nên làm việc cùng Cát Phú?",
+    "items": [
+      {
+        "title": "Công việc thực tế, rõ trách nhiệm",
+        "text": "Mỗi vị trí đều gắn với mục tiêu cụ thể trong quá trình tư vấn, thiết kế, thi công, nghiệm thu và chăm sóc khách hàng."
+      },
+      {
+        "title": "Môi trường đề cao sự minh bạch",
+        "text": "Cát Phú khuyến khích trao đổi rõ ràng về tiến độ, chất lượng, vật tư, chi phí và trách nhiệm giữa các bộ phận."
+      },
+      {
+        "title": "Cơ hội phát triển nghề nghiệp",
+        "text": "Nhân sự được tham gia vào các dự án nhà ở thực tế, tích lũy kinh nghiệm hiện trường và kỹ năng làm việc với khách hàng."
+      }
+    ]
+  },
+  "positions": {
+    "eyebrow": "Vị trí đang tuyển",
+    "title": "Cơ hội nghề nghiệp tại Cát Phú",
+    "description": "Các vị trí có thể thay đổi theo nhu cầu dự án. Ứng viên phù hợp sẽ được liên hệ để trao đổi chi tiết về công việc, quyền lợi và thời gian làm việc.",
+    "items": [
+      {
+        "title": "Kỹ sư giám sát công trình",
+        "type": "Toàn thời gian",
+        "location": "TP.HCM và công trình lân cận",
+        "experience": "Từ 1 năm kinh nghiệm",
+        "summary": "Theo dõi tiến độ, kiểm tra chất lượng thi công, phối hợp đội thợ và cập nhật hiện trường theo từng giai đoạn.",
+        "requirements": [
+          "Có kinh nghiệm giám sát nhà phố hoặc công trình dân dụng",
+          "Đọc hiểu bản vẽ, bóc tách khối lượng cơ bản",
+          "Có trách nhiệm, giao tiếp rõ ràng với đội thi công và khách hàng"
+        ]
+      },
+      {
+        "title": "Kiến trúc sư / Thiết kế nhà ở",
+        "type": "Toàn thời gian hoặc cộng tác",
+        "location": "TP.HCM",
+        "experience": "Có portfolio công trình nhà ở",
+        "summary": "Tư vấn mặt bằng công năng, triển khai ý tưởng thiết kế, phối hợp hồ sơ kỹ thuật và hỗ trợ khách hàng trong giai đoạn đầu dự án.",
+        "requirements": [
+          "Sử dụng tốt phần mềm thiết kế chuyên môn",
+          "Có tư duy công năng, thẩm mỹ và khả năng tư vấn khách hàng",
+          "Ưu tiên kinh nghiệm thiết kế nhà phố, biệt thự, cải tạo"
+        ]
+      },
+      {
+        "title": "Nhân viên tư vấn khách hàng",
+        "type": "Toàn thời gian",
+        "location": "TP.HCM",
+        "experience": "Ưu tiên kinh nghiệm tư vấn dịch vụ xây dựng/nội thất",
+        "summary": "Tiếp nhận nhu cầu khách hàng, tư vấn dịch vụ, đặt lịch khảo sát và phối hợp đội kỹ thuật theo dõi cơ hội bán hàng.",
+        "requirements": [
+          "Giao tiếp tốt, biết lắng nghe nhu cầu khách hàng",
+          "Theo dõi thông tin cẩn thận, phản hồi đúng hẹn",
+          "Có tinh thần học hỏi kiến thức xây dựng và quy trình dịch vụ"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Quyền lợi",
+    "title": "Những giá trị Cát Phú cam kết với đội ngũ",
+    "items": [
+      "Thu nhập trao đổi theo năng lực, kinh nghiệm và phạm vi công việc.",
+      "Được tham gia dự án thực tế, học hỏi quy trình từ tư vấn đến bàn giao.",
+      "Môi trường làm việc đề cao trách nhiệm, sự rõ ràng và tinh thần phối hợp.",
+      "Có cơ hội phát triển vai trò theo năng lực thực tế và hiệu quả công việc."
+    ]
+  },
+  "process": {
+    "eyebrow": "Quy trình ứng tuyển",
+    "title": "Ứng tuyển đơn giản trong 4 bước",
+    "items": [
+      {
+        "step": "01",
+        "title": "Gửi thông tin",
+        "text": "Ứng viên gửi CV/portfolio, vị trí mong muốn và thông tin liên hệ qua email hoặc form liên hệ."
+      },
+      {
+        "step": "02",
+        "title": "Sàng lọc hồ sơ",
+        "text": "Cát Phú xem xét kinh nghiệm, năng lực phù hợp và nhu cầu tuyển dụng hiện tại."
+      },
+      {
+        "step": "03",
+        "title": "Trao đổi/phỏng vấn",
+        "text": "Hai bên trao đổi về công việc, kỳ vọng, thời gian làm việc, thu nhập và cách phối hợp."
+      },
+      {
+        "step": "04",
+        "title": "Nhận việc và đồng hành",
+        "text": "Ứng viên phù hợp được hướng dẫn quy trình làm việc và tham gia vào dự án thực tế."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bạn muốn đồng hành cùng Cát Phú?",
+    "description": "Gửi CV, portfolio hoặc thông tin giới thiệu bản thân về email tuyển dụng. Vui lòng ghi rõ vị trí ứng tuyển trong tiêu đề email.",
+    "email": "lienhe@catphu.vn",
+    "phone": "0356441838",
+    "buttonLabel": "Gửi email ứng tuyển"
+  }
+}
