@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Cát Phú</title>
+  <desc id="desc">Biểu tượng khung mái màu xanh và tòa nhà màu vàng, kèm chữ Cát Phú.</desc>
+  <rect width="420" height="520" fill="#ffffff"/>
+  <g transform="translate(40 32)">
+    <path d="M170 14c16-16 42-16 58 0l130 130c16 16 16 42 0 58l-56 56-34-34 44-44L199 67 86 180l44 44-34 34-56-56c-16-16-16-42 0-58L170 14Z" fill="#2855a2"/>
+    <path d="M200 118 260 178v128l-42 42V153h-18v225l-48-48V153h-18v177l-42-42V178l60-60v162l48 48V118Z" fill="#f6ac00"/>
+    <path d="M92 288 160 356c22 22 58 22 80 0l68-68 36 36-104 104c-22 22-58 22-80 0L56 324l36-36Z" fill="#f6ac00"/>
+  </g>
+  <text x="210" y="488" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" fill="#2855a2" letter-spacing="0">CÁT PHÚ</text>
+</svg>
