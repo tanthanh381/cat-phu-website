@@ -499,7 +499,31 @@ function renderFooter(data) {
   floatingActions.innerHTML = "";
 }
 
-function wireContactForm() {
+function buildLeadEmail(payload, data) {
+  const company = data.company || {};
+  const subject = encodeURIComponent(`Yêu cầu tư vấn từ website ${company.name || "Cát Phú"}`);
+  const body = encodeURIComponent(
+    [
+      "Khách hàng gửi yêu cầu tư vấn từ website:",
+      "",
+      `Họ tên: ${payload.name || ""}`,
+      `Số điện thoại: ${payload.phone || ""}`,
+      `Khu vực: ${payload.area || ""}`,
+      `Loại công trình: ${payload.service || ""}`,
+      `Mức đầu tư: ${payload.budget || ""}`,
+      "",
+      `Yêu cầu cụ thể: ${payload.message || ""}`,
+    ].join("\n")
+  );
+  return `mailto:${company.email || "lienhe@catphu.vn"}?subject=${subject}&body=${body}`;
+}
+
+function handleStaticLeadFallback(payload, data, message) {
+  window.location.href = buildLeadEmail(payload, data);
+  message.textContent = "Thông tin đã được chuẩn bị để gửi qua email. Vui lòng bấm Gửi trong ứng dụng email vừa mở, hoặc liên hệ hotline/Fanpage nếu cần tư vấn ngay.";
+}
+
+function wireContactForm(data) {
   const form = document.getElementById("contact-form");
   const message = document.getElementById("form-message");
   if (!form) return;
@@ -517,16 +541,19 @@ function wireContactForm() {
       });
       const contentType = response.headers.get("Content-Type") || "";
       if (!contentType.includes("application/json")) {
-        message.textContent = "Website đang chạy bản tĩnh. Vui lòng gọi hotline, nhắn Zalo hoặc Fanpage để Cát Phú tư vấn nhanh nhất.";
+        handleStaticLeadFallback(payload, data, message);
         return;
       }
 
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Không gửi được thông tin.");
+      if (!response.ok) {
+        message.textContent = result.error || "Không gửi được thông tin.";
+        return;
+      }
       form.reset();
       message.textContent = result.message || "Đã gửi thông tin.";
     } catch (error) {
-      message.textContent = error.message;
+      handleStaticLeadFallback(payload, data, message);
     }
   });
 }
@@ -565,7 +592,7 @@ function renderSite(data) {
     renderContact(data),
   ].join("");
   renderFooter(data);
-  wireContactForm();
+  wireContactForm(data);
   if (location.hash) {
     window.requestAnimationFrame(() => {
       const target = document.querySelector(location.hash);
